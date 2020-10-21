@@ -25,6 +25,10 @@ spring:
           uri: http://localhost:8084
           predicates:
             - Path=/payments/**,/paymentCancellations/**
+        - id: alarm
+          uri: http://localhost:8085
+          predicates:
+            - Path=/alarm/**   
       globalcors:
         corsConfigurations:
           '[/**]':
