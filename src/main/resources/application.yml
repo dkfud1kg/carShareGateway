@@ -8,6 +8,7 @@ spring:
   cloud:
     gateway:
       routes:
+
         - id: order
           uri: http://localhost:8081
           predicates:
@@ -59,6 +60,10 @@ spring:
           uri: http://carsharepayment:8080
           predicates:
             - Path=/payments/**,/paymentCancellations/**
+        - id: alarm
+          uri: http://carsharealarm:8080
+          predicates:
+            - Path=/alarm/**    
       globalcors:
         corsConfigurations:
           '[/**]':
